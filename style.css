@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f0f0f0;
 }
 
 /* header */
@@ -12,6 +13,13 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+header > h1{
+    background-color: #fffbfb;
 }
 
 /* footer */
@@ -24,4 +32,30 @@ footer{
     gap: 0 10px;
     justify-content: center;
     width: 100%;
+}
+
+/* main */
+.main{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.container{
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+button{
+    padding: 10px 15px;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+button:hover{
+    filter: brightness(90%);
 }
