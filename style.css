@@ -59,3 +59,66 @@ footer{
 #addBook:hover{
     filter: brightness(90%);
 }
+
+/* form */
+.module{
+    /* display: block;  it will appear when user click on add book*/
+    width: 300px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    height: 386px;
+    border-radius: 8px;
+    position: fixed;
+    top: 20%;
+    left: 40%;
+}
+
+.input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: text;
+    outline: none;
+    border: none;
+    background-color: #fffbfb;
+    height: 47px;
+    font-size: inherit;
+    font-weight: 700px;
+}
+
+.add-book-from{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+}
+
+.add-book-from button{
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 47px;
+    font-size: 1.2em;
+}
+
+.btn-light-green{
+    background-color: #9fff9c;
+    padding: 10px 15px;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    accent-color: white;
+}
+
+.is-read{
+    display: flex;
+    gap: 0 15px;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.2em;
+}
