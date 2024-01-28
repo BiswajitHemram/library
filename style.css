@@ -47,7 +47,7 @@ footer{
     padding: 10px;
 }
 
-button{
+#addBook{
     padding: 10px 15px;
     font-size: 1.5em;
     border: none;
@@ -56,6 +56,6 @@ button{
     font-weight: 600;
 }
 
-button:hover{
+#addBook:hover{
     filter: brightness(90%);
 }
