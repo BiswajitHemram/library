@@ -62,15 +62,22 @@ footer{
 
 /* form */
 .module{
-    /* display: block;  it will appear when user click on add book*/
-    width: 300px;
+    display: none;
+    width: 100%;
     background-color: #f0f0f0;
     padding: 20px;
     height: 386px;
     border-radius: 8px;
     position: fixed;
-    top: 20%;
-    left: 40%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 100%;
+}
+
+.active-module{
+    display: block; /*it will appear when user click on add book*/ 
 }
 
 .input{
@@ -91,8 +98,13 @@ footer{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 55%;
     font-size: 20px;
+    width: 35%;
+    margin: 10% auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .add-book-from button{
