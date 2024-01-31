@@ -133,4 +133,42 @@ function createCardBook() {
     btnGroup.appendChild(readBtn);
     btnGroup.appendChild(removeBtn);
 
+    // Add event listeners for buttons
+    readBtn.addEventListener("click", () => {
+        readOptionChange(readBtn);
+    });
+    removeBtn.addEventListener("click", () => {
+        removeBookCard(removeBtn);
+    });
+}
+
+/**
+ * Function to toggle the read status of a book and update the button style and text accordingly.
+ * @param {HTMLButtonElement} readBtn - The button element representing the read status.
+ */
+function readOptionChange(readBtn) {
+    // Check if the button has the class indicating it's currently marked as "Read"
+    if (readBtn.classList.contains("btn-light-green")) {
+        // Replace the class to switch to "Not Read" style
+        readBtn.classList.replace("btn-light-green", "btn-light-red");
+        // Update the button text to reflect the change
+        readBtn.textContent = "Not Read";
+    } else {
+        // Replace the class to switch to "Read" style
+        readBtn.classList.replace("btn-light-red", "btn-light-green");
+        // Update the button text to reflect the change
+        readBtn.textContent = "Read";
+    }
+}
+
+/**
+ * Function to remove the book card from the DOM when the remove button is clicked.
+ * @param {HTMLButtonElement} removeBtn - The button element triggering the removal of the card.
+ */
+function removeBookCard(removeBtn) {
+    // Find the parent element of the remove button, which is the button group, and then navigate up to the book card
+    const cardToRemove = removeBtn.parentElement.parentElement;
+    
+    // Remove the book card from the DOM
+    cardToRemove.remove();
 }
