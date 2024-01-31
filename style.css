@@ -1,3 +1,4 @@
+/* Reset styles and global styles */
 *{
     margin: 0;
     padding: 0;
@@ -13,7 +14,7 @@ body{
     height: 100vh;
 }
 
-/* header */
+/* Header styles */
 header{
     width: auto;
     height: 100px;
@@ -27,7 +28,7 @@ header{
     flex-shrink: 0;
 }
 
-/* footer */
+/* Footer styles */
 footer{
     flex-shrink: 0;
     padding: 10px;
@@ -38,11 +39,12 @@ footer{
     width: 100%;
 }
 
-/* main */
+/* Main content styles */
 .main{
     flex-grow: 1;
 }
 
+/* Container styles */
 .container{
     width: 100%;
     text-align: center;
@@ -50,6 +52,7 @@ footer{
     padding: 10px;
 }
 
+/* Button styles */
 #addBook{
     padding: 10px 15px;
     font-size: 1.5em;
@@ -63,7 +66,7 @@ footer{
     filter: brightness(90%);
 }
 
-/* form */
+/* Form styles */
 .module{
     display: none;
     width: 100%;
@@ -80,7 +83,7 @@ footer{
 }
 
 .active-module{
-    display: block; /*it will appear when user click on add book*/ 
+    display: block; /* Visible when user clicks 'add book' */ 
 }
 
 .input{
@@ -118,6 +121,7 @@ footer{
     font-size: 1.2em;
 }
 
+/* Button colors */
 .btn-light-green{
     background-color: #9fff9c;
     padding: 10px 15px;
@@ -137,7 +141,8 @@ footer{
     justify-content: center;
     font-size: 1.2em;
 }
-/*  */
+
+/* Book grid styles */
 .book-grid {
     margin-top: 40px;
     display: grid;
@@ -146,9 +151,9 @@ footer{
     margin-left: 5%;
     margin-right: 5%;
     font-weight: 500;
-  }
+}
 
-  .book-grid>.book-card {
+.book-grid>.book-card {
     background-color: #fffbfb;
     display: flex;
     flex-direction: column;
@@ -159,20 +164,21 @@ footer{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     font-size: 20px;
     line-height: 1.2;
-  }
-  
-  .button-group {
+}
+
+.button-group {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  .btn {
+}
+
+/* Button styles */
+.btn {
     padding: 10px 15px;
     font: inherit;
     border-radius: 8px;
     cursor: pointer;
-  }
+}
 
 .btn-light-red{
     background-color: #ff9c9c;
