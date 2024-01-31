@@ -46,7 +46,7 @@ addBookFrom.addEventListener("submit", function(event) {
         alert("Please fill in all fields correctly!");
     } else {
         // Call addBookToLibrary function with form values
-        // addBookToLibrary(titleValue, authorValue, pagesValue, result);
+        addBookToLibrary(titleValue, authorValue, pagesValue, result);
         
         // If all inputs are valid, close the popup
         addBookModule.classList.remove("active-module");
@@ -58,4 +58,79 @@ String.prototype.trueLength = function(){
     // Trim the string to remove leading and trailing whitespace
     // Return the length of the trimmed string
     return this.trim().length;
+}
+
+const myLibrary = []; // Array to store the book objects
+
+// Book constructor function to create book objects
+function Book(title, author, pages, result) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = result;
+}
+
+let newBook; // Variable to store the newly created book object
+
+// Function to add a book to the library
+function addBookToLibrary(title, author, pages, result) {
+    // Check if there's already a book with the same title (case-insensitive)
+    const isDuplicate = myLibrary.some(item => item.title.toLowerCase() === title.toLowerCase());
+
+    if (isDuplicate) {
+        // Display an alert if a book with the same title already exists
+        alert("A book with this title already exists.");
+        return; // Exit the function to prevent duplicate addition
+    }
+
+    // Create a new Book object with the provided information
+    newBook = new Book(title, author, pages, result);
+    // Add the new book object to the library array
+    myLibrary.push(newBook);
+    // Call the function to create a card for the new book
+    createCardBook();
+}
+
+const bookGrid = document.querySelector("#bookGrid");
+
+// Function to create a new card for a book
+function createCardBook() {
+    // Create DOM elements for the card components
+    const div = document.createElement("div");
+    const titleName = document.createElement("p");
+    const authorName = document.createElement("p");
+    const numberPage = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const readBtn = document.createElement("button");
+    const removeBtn = document.createElement("button");
+
+    // Set attributes and classes for the elements
+    div.setAttribute("class", "book-card");
+    btnGroup.setAttribute("class", "button-group");
+    readBtn.setAttribute("id", "readBtn");
+    removeBtn.setAttribute("id", "removeBtn");
+    removeBtn.classList.add("btn");
+
+    // Add specific class based on the read status of the book
+    if (newBook["read"] === "Not Read") {
+        readBtn.classList.add("btn-light-red");
+    }
+    readBtn.classList.add("btn", "btn-light-green");
+
+    // Set text content for the elements
+    titleName.textContent = newBook["title"];
+    authorName.textContent = newBook["author"];
+    numberPage.textContent = newBook["pages"];
+    readBtn.textContent = newBook["read"];
+    removeBtn.textContent = "Remove";
+
+    // Append elements to the DOM
+    bookGrid.appendChild(div);
+    div.appendChild(titleName);
+    div.appendChild(authorName);
+    div.appendChild(numberPage);
+    div.appendChild(btnGroup);
+    btnGroup.appendChild(readBtn);
+    btnGroup.appendChild(removeBtn);
+
 }
