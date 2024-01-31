@@ -1,23 +1,32 @@
-// date object footer copywrite
-const copyrightDate = document.querySelector("#copyrightDate")
-const date = new Date()
-const year = date.getFullYear()
-copyrightDate.textContent = year
+// Retrieve the copyright date element from the DOM
+const copyrightDate = document.querySelector("#copyrightDate");
 
-// pop up from to add book
-const addBookbtn = document.querySelector("#addBook")
-const addBookModule = document.querySelector("#addBookModule")
-const addBookFrom = document.querySelector("#addBookFrom")
+// Get the current date
+const date = new Date();
 
+// Extract the current year from the date object
+const year = date.getFullYear();
+
+// Set the text content of the copyright date element to the current year
+copyrightDate.textContent = year;
+
+// Retrieve the elements related to the book adding functionality
+const addBookbtn = document.querySelector("#addBook"); // Button to trigger the add book popup
+const addBookModule = document.querySelector("#addBookModule"); // Popup module for adding books
+const addBookFrom = document.querySelector("#addBookFrom"); // Form for adding book data
+
+// Event listener for the button that triggers the add book module to become active
 addBookbtn.addEventListener("click", function(){
-    addBookModule.classList.add("active-module")
+    addBookModule.classList.add("active-module");
 })
 
+// Event listener for clicks inside the addBookFrom form to prevent them from reaching addBookModule
 addBookFrom.addEventListener("click", function(e) {
     // Prevent click events inside addBookFrom from reaching addBookModule
     e.stopPropagation();
 });
 
+// Event listener for clicks on the addBookModule to remove the active class and hide the module
 addBookModule.addEventListener("click", function() {
     addBookModule.classList.remove("active-module");
 });
