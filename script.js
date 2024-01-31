@@ -22,28 +22,40 @@ addBookModule.addEventListener("click", function() {
     addBookModule.classList.remove("active-module");
 });
 
-// from input 
+// Selecting the input field for the title
 const title = document.querySelector("#title");
-const author = document.querySelector("#author");
-const page = document.querySelector("pages");
+// Selecting the input field for the author
+const author = document.querySelector("#author")
+// Selecting the input field for the number of pages
+const page = document.querySelector("#pages");
+// Selecting the checkbox for indicating if the book has been read
 const isRead = document.querySelector("#isRead");
-let result;
-isRead.addEventListener("change",function(){
-    const isChecked = this.checked;
-    result = isChecked ? 'on' : 'off';
-})
 
-addBookFrom.addEventListener("submit",function(event){
-    if(title.value.trueLength() === 0 || author.value.trueLength() === 0){
-        alert("Please write in Correct formate!");
-        event.preventDefault();
-    } else{
+// Adding an event listener for the form submission
+addBookFrom.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission for now
+
+    // Retrieve form values
+    const titleValue = title.value.trim();
+    const authorValue = author.value.trim();
+    const pagesValue = +page.value; // Convert to integer
+    const result = isRead.checked ? 'Read' : 'Not Read';
+    
+    // Check if form data is valid
+    if (titleValue.trueLength() === 0 || authorValue.trueLength() === 0 || isNaN(pagesValue)) {
+        alert("Please fill in all fields correctly!");
+    } else {
+        // Call addBookToLibrary function with form values
+        // addBookToLibrary(titleValue, authorValue, pagesValue, result);
+        
         // If all inputs are valid, close the popup
         addBookModule.classList.remove("active-module");
-        event.preventDefault();
     }
 });
-// to check correct length of string
+
+// Define a custom method 'trueLength' on the String prototype
 String.prototype.trueLength = function(){
-    return this.trim().length
+    // Trim the string to remove leading and trailing whitespace
+    // Return the length of the trimmed string
+    return this.trim().length;
 }
