@@ -59,6 +59,12 @@ addBookFrom.addEventListener("submit", function(event) {
         
         // If all inputs are valid, close the popup
         addBookModule.classList.remove("active-module");
+
+        // clear form fields
+        title.value = "";
+        author.value = "";
+        page.value = "";
+        isRead.checked = false;
     }
 });
 
